@@ -1,5 +1,2 @@
-# 1.5 Hello Play!
+# 1.5 ES HIGH CHART !
 
-Sample application from chapter 1 of [Play for Scala](http://bit.ly/playscala).
-
-This sample shows a minimal controller action, a controller action with a request parameter, and a minimal HTML template.
