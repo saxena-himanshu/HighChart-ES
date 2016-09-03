@@ -1,4 +1,4 @@
-@(message: String)(implicit msg: play.api.i18n.Messages)
+@(message: String, categories: play.api.libs.json.JsValue, data: play.api.libs.json.JsValue)(implicit msg: play.api.i18n.Messages)
 
 @navbar(message)
 @main(message) {
@@ -61,4 +61,12 @@
 	</div><!-- /container -->
 
 </div><!-- /main -->
+<script !src="">
+  $(function(){
+    var data = JSON.parse("@data".replace(/&quot;/g,'"'));
+    var category = JSON.parse("@categories".replace(/&quot;/g,'"'));
+    populateBarChart(category, data);
+  });
+
+</script>
 }
