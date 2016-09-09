@@ -4,7 +4,7 @@
 		module="highchart-es-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20160906142016"
+		publication="20160907224620"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

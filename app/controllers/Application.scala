@@ -9,9 +9,9 @@ import service.ChartService
 import javax.inject._
 import play.api.libs.json._
 import domain.JsonFormat.barJsonFormat
-import domain.JsonFormat.columnJsonFormat
-
-
+import play.api.mvc._
+import play.api.libs.json._
+import domain.JsonFormat._
 
 @Singleton
 class Application @Inject()(chartService: ChartService) extends Controller {
@@ -27,9 +27,7 @@ class Application @Inject()(chartService: ChartService) extends Controller {
   def columnAndBarChart = Action {
     val (categories, data) = chartService.getBarChartData
     val data2 = chartService.getColumnChartData
-    val kop=Json.toJson(data2)
-   // val d = Json.toJson(data2)
-   println(s"d:::::::::::${kop}")
+    val kop = Json.toJson(data2)
     Ok(views.html.columnAndBar(Messages("subheader.bar_column"), Json.toJson(categories), Json.toJson(data), kop))
   }
 

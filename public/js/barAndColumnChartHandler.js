@@ -77,7 +77,7 @@ $(function () {
         },
         series: [{
             name: 'Population',
-            data:  categoryvalue,
+            data:  processData(categoryvalue),
             dataLabels: {
                 enabled: true,
                 rotation: -90,
@@ -92,6 +92,16 @@ $(function () {
             }
         }]
     });
+}
+
+var processData = function(data) {
+    var result = data.map((item) => {
+        return [
+            item['name'],
+            item['value'],
+        ]
+    });
+    return result;
 }
 
 var populateBarChart = function(categories, data) {
